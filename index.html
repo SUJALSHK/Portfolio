@@ -5,270 +5,299 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Portfolio of Sujal Shakya, a computer science student and full-stack web developer building responsive web applications."
+      content="All projects by Sujal Shakya, including web apps, frontend projects, games, and AI tools."
     />
-    <title>Sujal Shakya | Portfolio</title>
+    <title>All Projects | Sujal Shakya</title>
 
-    <link rel="stylesheet" href="port.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="../../projects-data.js"></script>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Revalia&display=swap");
+
+      :root {
+        --bg-main: #0b1020;
+        --bg-card: #111827;
+        --accent: #38bdf8;
+        --text-main: #f9fafb;
+        --text-muted: #cbd5e1;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        background: #03050c;
+        color: var(--text-main);
+        font-family: "Poppins", sans-serif;
+      }
+
+      .display-font {
+        font-family: "Revalia", cursive;
+      }
+
+      .all-projects-page {
+        min-height: 100vh;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 18% 0%, rgba(246, 238, 220, 0.14) 0, rgba(246, 238, 220, 0.05) 24rem, transparent 48rem),
+          radial-gradient(circle at 80% 12%, rgba(56, 189, 248, 0.18) 0, rgba(56, 189, 248, 0.07) 30rem, transparent 58rem),
+          radial-gradient(circle at 44% 52%, rgba(92, 111, 145, 0.16) 0, rgba(92, 111, 145, 0.06) 38rem, transparent 76rem),
+          linear-gradient(180deg, #151b2c 0%, #0b1020 42%, #03050c 100%);
+      }
+
+      .fade-in {
+        animation: fadeIn 0.8s ease both;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(18px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .project-card {
+        border: 1px solid rgba(56, 189, 248, 0.18);
+        border-radius: 16px;
+        overflow: hidden;
+        background: rgba(17, 24, 39, 0.78);
+        box-shadow: 0 22px 60px rgba(0, 0, 0, 0.26);
+        backdrop-filter: blur(16px);
+        transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+      }
+
+      .project-card:hover,
+      .project-card:focus-within {
+        border-color: rgba(56, 189, 248, 0.72);
+        box-shadow: 0 26px 78px rgba(56, 189, 248, 0.18), 0 28px 76px rgba(0, 0, 0, 0.34);
+        transform: translateY(-6px);
+      }
+
+      .project-image-wrap {
+        position: relative;
+        aspect-ratio: 16 / 10;
+        overflow: hidden;
+        background: rgba(15, 23, 42, 0.9);
+      }
+
+      .project-image-wrap::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, transparent 34%, rgba(3, 5, 12, 0.46));
+        pointer-events: none;
+      }
+
+      .project-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: saturate(0.92) brightness(0.88);
+        transition: filter 0.3s ease, transform 0.35s ease;
+      }
+
+      .project-card:hover .project-image,
+      .project-card:focus-within .project-image {
+        filter: saturate(1.04) brightness(1);
+        transform: scale(1.06);
+      }
+
+      .theme-button {
+        min-height: 3rem;
+        border: 1px solid rgba(56, 189, 248, 0.35);
+        border-radius: 0.5rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.45rem;
+        background: rgba(15, 23, 42, 0.72);
+        color: #ffffff;
+        box-shadow: 0 18px 38px rgba(56, 189, 248, 0.12);
+        font-size: 0.875rem;
+        font-weight: 700;
+        padding: 0.75rem 1.35rem;
+        transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, transform 0.25s ease, opacity 0.25s ease;
+      }
+
+      .theme-button:hover,
+      .theme-button:focus-visible {
+        border-color: var(--accent);
+        background: rgba(56, 189, 248, 0.1);
+        box-shadow: 0 20px 44px rgba(56, 189, 248, 0.22);
+        transform: translateY(-2px);
+      }
+
+      .project-card .theme-button {
+        opacity: 0.88;
+      }
+
+      .project-card:hover .theme-button,
+      .project-card:focus-within .theme-button {
+        opacity: 1;
+      }
+    </style>
   </head>
   <body>
-    <header class="header">
-      <a href="#home" class="logo">Sujal<span>Shakya</span></a>
+    <div id="root"></div>
 
-      <input type="checkbox" id="check" aria-label="Toggle navigation" />
-      <label for="check" class="checkbtn" aria-hidden="true">
-        <i class="fa-solid fa-bars"></i>
-      </label>
-
-      <nav class="navbar" aria-label="Primary navigation">
-        <a href="#home" class="active smallNav">Home</a>
-        <a href="#about" class="smallNav">About</a>
-        <a href="#skills" class="smallNav">Skills</a>
-        <a href="#portfolio" class="smallNav">Projects</a>
-        <a href="#contact" class="smallNav">Contact</a>
-      </nav>
-    </header>
-
-    <main>
-      <section class="home" id="home">
-        <div class="home-content">
-          <p class="eyebrow">
-            <span class="status-dot"></span>
-            Open to internship opportunities
-          </p>
-          <h1>Hi, I'm <span>Sujal Shakya</span></h1>
-          <h2>
-            Computer Science Student &amp;
-            <span class="role-text" data-roles="Full-Stack Developer">Full-Stack Developer</span>
-          </h2>
-          <p class="hero-copy">
-            I build clean, responsive web applications and keep growing my skills
-            in JavaScript, TypeScript, React, Node.js, and Python.
-          </p>
-
-          <div class="cta-row">
-            <a href="#portfolio" class="btn btn-primary">
-              <i class="fa-solid fa-code"></i>
-              View Projects
-            </a>
-            <a
-              href="recume_csu_.pdf20250109-22-ccicig20250109-22-bgmiq2.docx"
-              class="btn btn-secondary"
-              download="Sujal_Shakya_Resume.docx"
-            >
-              <i class="fa-solid fa-file-arrow-down"></i>
-              Resume
-            </a>
-            <a href="#contact" class="btn btn-ghost">
-              <i class="fa-solid fa-paper-plane"></i>
-              Contact
-            </a>
-          </div>
-
-          <div class="social-media" aria-label="Social links">
-            <a href="https://github.com/sujalshk" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
-              <i class="fa-brands fa-github"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/sujal-shakya-77764a2ba/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
-              <i class="fa-brands fa-linkedin-in"></i>
-            </a>
-            <a href="https://www.instagram.com/_sujal_shk_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram profile">
-              <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a href="https://www.facebook.com/kammu30/" target="_blank" rel="noopener noreferrer" aria-label="Facebook profile">
-              <i class="fa-brands fa-facebook-f"></i>
-            </a>
-          </div>
-
-          <div class="hero-stack" aria-label="Technology preview">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JavaScript</span>
-            <span>TypeScript</span>
-            <span>Python</span>
-          </div>
-        </div>
-
-        <div class="home-visual" aria-label="Profile summary">
-          <div class="profile-card">
-            <div class="profile-image">
-              <img src="hero-sujal.png" alt="Portrait of Sujal Shakya" />
-            </div>
-            <div class="profile-meta">
-              <p>CS Student</p>
-              <strong>Building full-stack web apps</strong>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="front-summary" aria-label="Portfolio highlights">
-        <div class="summary-item">
-          <strong>6+</strong>
-          <span>Projects Built</span>
-        </div>
-        <div class="summary-item">
-          <strong>5+</strong>
-          <span>Core Technologies</span>
-        </div>
-        <div class="summary-item">
-          <strong>Full-Stack</strong>
-          <span>Learning Path</span>
-        </div>
-      </section>
-
-      <section class="about" id="about">
-        <div class="about-img">
-          <img src="sujal.jpg" alt="Sujal Shakya" />
-        </div>
-        <div class="about-content">
-          <p class="section-kicker">About Me</p>
-          <h2 class="heading">Student Developer With A Builder Mindset</h2>
-          <p>
-            I am a computer science student focused on becoming a strong
-            full-stack web developer. I have completed frontend fundamentals and
-            I am now building backend skills with APIs, databases, and server-side
-            development.
-          </p>
-          <p>
-            My goal is to create useful, responsive, and reliable applications
-            while preparing for internships and real-world software engineering
-            work.
-          </p>
-          <a href="#contact" class="btn btn-primary">
-            <i class="fa-solid fa-handshake"></i>
-            Let's Connect
-          </a>
-        </div>
-      </section>
-
-      <section class="skills" id="skills">
-        <div class="section-heading">
-          <p class="section-kicker">Skills Preview</p>
-          <h2 class="heading">Technologies I Work With</h2>
-          <p>
-            A quick overview of the tools and concepts I use while building
-            projects and improving as a computer science student.
-          </p>
-        </div>
-
-        <div class="skills-grid">
-          <article class="skill-card">
-            <i class="fa-solid fa-laptop-code"></i>
-            <h3>Frontend</h3>
-            <p>HTML, CSS, JavaScript, TypeScript, responsive layouts, and modern UI patterns.</p>
-          </article>
-          <article class="skill-card">
-            <i class="fa-solid fa-server"></i>
-            <h3>Backend</h3>
-            <p>Node.js, Express, Python, REST APIs, form handling, and database fundamentals.</p>
-          </article>
-          <article class="skill-card">
-            <i class="fa-solid fa-toolbox"></i>
-            <h3>Tools</h3>
-            <p>Git, GitHub, VS Code, browser DevTools, deployment, and debugging workflows.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="portfolio" id="portfolio">
-        <div class="section-heading projects-heading">
-          <div>
-            <p class="section-kicker">Featured Work</p>
-            <h2 class="heading">Projects That Show My Progress</h2>
-            <p>
-              These projects show my frontend foundation, JavaScript practice, and
-              interest in building complete web experiences.
-            </p>
-          </div>
-          <a href="/projects" class="view-all-projects">
-            View All Projects
-            <span aria-hidden="true">→</span>
-          </a>
-        </div>
-
-        <div class="project-carousel" data-project-carousel aria-label="Featured projects carousel">
-          <button class="carousel-arrow carousel-arrow-left" type="button" data-carousel-prev aria-label="Previous project">
-            <i class="fa-solid fa-chevron-left"></i>
-          </button>
-
-          <div class="carousel-stage" data-carousel-stage aria-live="polite"></div>
-
-          <button class="carousel-arrow carousel-arrow-right" type="button" data-carousel-next aria-label="Next project">
-            <i class="fa-solid fa-chevron-right"></i>
-          </button>
-
-          <div class="carousel-dots" data-carousel-dots aria-label="Project carousel pagination"></div>
-        </div>
-      </section>
-
-      <section class="contact" id="contact">
-        <div class="section-heading">
-          <p class="section-kicker">Contact</p>
-          <h2 class="heading">Let's Build Something Useful</h2>
-          <p>
-            Have an internship opportunity, project idea, or academic
-            collaboration in mind? Send me a message.
-          </p>
-        </div>
-
-        <form name="submit-to-google-sheet">
-          <div class="input-box">
-            <input type="text" name="Name" placeholder="Full Name" required />
-            <input type="email" name="Email" placeholder="Email Address" required />
-          </div>
-          <div class="input-box">
-            <input type="tel" name="Mobile" placeholder="Mobile Number" />
-            <input type="text" name="Subject" placeholder="Subject" />
-          </div>
-          <textarea name="Message" cols="30" rows="8" placeholder="Your Message" required></textarea>
-          <button type="submit" class="btn btn-primary">
-            <i class="fa-solid fa-paper-plane"></i>
-            Send Message
-          </button>
-          <p class="form-message" id="form-message" aria-live="polite"></p>
-        </form>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-text">
-        <p>Copyright &copy; 2026 by Sujal Shakya | All Rights Reserved.</p>
-      </div>
-      <div class="footer-iconTop">
-        <a href="#home" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></a>
-      </div>
-    </footer>
-
-    <script src="https://unpkg.com/scrollreveal"></script>
     <script>
-      const scriptURL =
-        "https://script.google.com/macros/s/AKfycbxYEOPg1TqOOkQBrgDcrfcmZnzLeLKQ7HBtFi2ixkMxLjr4ZxyqLsofiXnoWUlwc72_jA/exec";
-      const form = document.forms["submit-to-google-sheet"];
-      const formMessage = document.getElementById("form-message");
+      const { createElement: h } = React;
 
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        formMessage.textContent = "Sending...";
+      function imagePath(project) {
+        if (/^(https?:|\/)/.test(project.image)) {
+          return project.image;
+        }
 
-        fetch(scriptURL, { method: "POST", body: new FormData(form) })
-          .then(() => {
-            formMessage.textContent = "Message sent successfully. Thank you!";
-            form.reset();
-          })
-          .catch(() => {
-            formMessage.textContent = "Message could not be sent. Please try again.";
-          });
-      });
+        return `/${project.image}`;
+      }
+
+      function linkAttributes(url) {
+        return /^https?:/.test(url)
+          ? { target: "_blank", rel: "noopener noreferrer" }
+          : {};
+      }
+
+      function ProjectCard({ project, index }) {
+        const liveUrl = project.liveUrl || "#";
+        const githubUrl = project.githubUrl || "#";
+
+        return h(
+          "article",
+          {
+            className: "project-card fade-in flex h-full flex-col",
+            style: { animationDelay: `${Math.min(index * 0.045, 0.45)}s` },
+          },
+          h(
+            "div",
+            { className: "project-image-wrap" },
+            h("img", {
+              className: "project-image",
+              src: imagePath(project),
+              alt: project.alt || `${project.title} project preview`,
+            })
+          ),
+          h(
+            "div",
+            { className: "flex flex-1 flex-col p-6" },
+            h(
+              "p",
+              { className: "text-xs font-bold uppercase tracking-[0.22em] text-sky-300" },
+              project.category
+            ),
+            h("h2", { className: "mt-3 text-2xl font-bold text-white" }, project.title),
+            h("p", { className: "mt-3 flex-1 text-sm leading-7 text-slate-300" }, project.description),
+            h(
+              "div",
+              { className: "mt-5 flex flex-wrap gap-2" },
+              project.tech.map((item) =>
+                h(
+                  "span",
+                  {
+                    key: item,
+                    className:
+                      "rounded-full border border-sky-300/25 bg-slate-950/50 px-3 py-1 text-xs font-semibold text-slate-200",
+                  },
+                  item
+                )
+              )
+            ),
+            h(
+              "div",
+              { className: "mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2" },
+              h(
+                "a",
+                {
+                  href: liveUrl,
+                  className: "theme-button",
+                  "aria-label": `View ${project.title}`,
+                  ...linkAttributes(liveUrl),
+                },
+                "View Project"
+              ),
+              h(
+                "a",
+                {
+                  href: githubUrl,
+                  className: "theme-button",
+                  "aria-label": `Open ${project.title} on GitHub`,
+                  ...linkAttributes(githubUrl),
+                },
+                "GitHub"
+              )
+            )
+          )
+        );
+      }
+
+      function AllProjectsPage() {
+        const projects = window.portfolioProjects || [];
+
+        return h(
+          "main",
+          { className: "all-projects-page" },
+          h(
+            "section",
+            { className: "mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:px-10" },
+            h(
+              "div",
+              { className: "fade-in mx-auto max-w-4xl text-center" },
+              h(
+                "p",
+                { className: "text-sm font-bold uppercase tracking-[0.28em] text-sky-300" },
+                "Project Collection"
+              ),
+              h(
+                "h1",
+                { className: "display-font mt-5 text-4xl leading-tight text-white sm:text-5xl lg:text-6xl" },
+                "All Projects"
+              ),
+              h(
+                "p",
+                { className: "mx-auto mt-5 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg" },
+                "A complete collection of my web apps, frontend projects, games, and AI tools."
+              ),
+              h(
+                "div",
+                { className: "mt-8 flex flex-col justify-center gap-3 sm:flex-row" },
+                h(
+                  "a",
+                  {
+                    href: "/projects",
+                    className: "theme-button",
+                  },
+                  "Back to Project Gallery"
+                ),
+                h(
+                  "a",
+                  {
+                    href: "/",
+                    className: "theme-button",
+                  },
+                  "Back to Home"
+                )
+              )
+            ),
+            h(
+              "div",
+              { className: "mt-14 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3" },
+              projects.map((project, index) => h(ProjectCard, { key: project.title, project, index }))
+            )
+          )
+        );
+      }
+
+      ReactDOM.createRoot(document.getElementById("root")).render(h(AllProjectsPage));
     </script>
-    <script src="projects-data.js"></script>
-    <script src="port.js"></script>
   </body>
 </html>
