@@ -3,9 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>prortfolio</title>
+    <meta
+      name="description"
+      content="Portfolio of Sujal Shakya, a computer science student and full-stack web developer building responsive web applications."
+    />
+    <title>Sujal Shakya | Portfolio</title>
 
-     <link rel="stylesheet" href="port.css">
+    <link rel="stylesheet" href="port.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -16,195 +20,255 @@
   </head>
   <body>
     <header class="header">
-      <a href="" class="logo">Portfolio</a>
-      <!-- <i class="fa-solid fa-bars" id="menu-icon"></i> -->
-      <input type="checkbox"  id="check">
-    <label for="check" class="checkbtn">
+      <a href="#home" class="logo">Sujal<span>Shakya</span></a>
 
-      <i class="fa-solid fa-bars"></i>
-    </label>
-      <nav class="navbar">
-        <a  href="#home" class="active smallNav" >Home</a>
-        <a  class="smallNav"  href="#about">About</a>
-        <a class="smallNav" href="#services">Services</a>
-        <a class="smallNav" href="#portfolio">Portfolio</a>
-        <a class="smallNav" href="#contact">Contact</a>
+      <input type="checkbox" id="check" aria-label="Toggle navigation" />
+      <label for="check" class="checkbtn" aria-hidden="true">
+        <i class="fa-solid fa-bars"></i>
+      </label>
+
+      <nav class="navbar" aria-label="Primary navigation">
+        <a href="#home" class="active smallNav">Home</a>
+        <a href="#about" class="smallNav">About</a>
+        <a href="#skills" class="smallNav">Skills</a>
+        <a href="#portfolio" class="smallNav">Projects</a>
+        <a href="#contact" class="smallNav">Contact</a>
       </nav>
     </header>
-    <!-- home section degine -->
 
-    <section class="home" id="home">
-      
-      <div class="home-content">
-        <h3>Hello, It's Me</h3>
-        <h1>Sujal Shakya</h1>
-        <h3>And I'm a <span>Web Developer.</span></h3>
-        <p>
-          Hello, I am Sujal Shakya, and I am learning full-stack web development.
-        </p>
-        <div class="social-media">
-          <a href="https://www.facebook.com/kammu30/"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#"><i class="fa-brands fa-square-x-twitter"></i></a>
-          <a href="https://www.instagram.com/_sujal_shk_/"><i class="fa-brands fa-square-instagram"></i></a>
-          <a href="https://www.linkedin.com/in/sujal-shakya-77764a2ba/"><i class="fa-brands fa-linkedin"></i></a>
-        </div>
-        <a href="recume_csu_.pdf20250109-22-ccicig20250109-22-bgmiq2.docx" class="bnt">Download Resume</a>
-      </div>
-      <div class="home-img">
-        <div class="box1">
-          <div class="box2"></div>
-        </div>
-        
-      </div>
-    </section>
+    <main>
+      <section class="home" id="home">
+        <div class="home-content">
+          <p class="eyebrow">
+            <span class="status-dot"></span>
+            Open to internship opportunities
+          </p>
+          <h1>Hi, I'm <span>Sujal Shakya</span></h1>
+          <h2>
+            Computer Science Student &amp;
+            <span class="role-text" data-roles="Full-Stack Developer">Full-Stack Developer</span>
+          </h2>
+          <p class="hero-copy">
+            I build clean, responsive web applications and keep growing my skills
+            in JavaScript, TypeScript, React, Node.js, and Python.
+          </p>
 
-    
+          <div class="cta-row">
+            <a href="#portfolio" class="btn btn-primary">
+              <i class="fa-solid fa-code"></i>
+              View Projects
+            </a>
+            <a
+              href="recume_csu_.pdf20250109-22-ccicig20250109-22-bgmiq2.docx"
+              class="btn btn-secondary"
+              download="Sujal_Shakya_Resume.docx"
+            >
+              <i class="fa-solid fa-file-arrow-down"></i>
+              Resume
+            </a>
+            <a href="#contact" class="btn btn-ghost">
+              <i class="fa-solid fa-paper-plane"></i>
+              Contact
+            </a>
+          </div>
 
-    <section class="about" id="about">
-      <div class="about-img">
-        <div class="box1">
-          <div class="box2"></div>
-        </div>
-      </div>
-      <div class="about-content">
-        <h2 class="heading">About <span>Me</span></h2>
-        <h3>Web Developer!</h3>
-        <p>Hello, I am Sujal Shakya, and I am learning full-stack web development. I have already completed the frontend part and am now moving on to the backend. I am fluent in programming languages like JavaScript, TypeScript, and Python. I am currently a high school graduate, having completed my high school education at Trinity International College in Computer Science.</p>
-         <a href="" class="bnt">Read More</a>
-      </div>
-    </section>
+          <div class="social-media" aria-label="Social links">
+            <a href="https://github.com/sujalshk" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/sujal-shakya-77764a2ba/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.instagram.com/_sujal_shk_/" target="_blank" rel="noopener noreferrer" aria-label="Instagram profile">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/kammu30/" target="_blank" rel="noopener noreferrer" aria-label="Facebook profile">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+          </div>
 
-    <section class="services" id="services">
-      <h2 class="heading">My <span>Services</span></h2>
-
-      <div class="services-container">
-        <div class="services-box">
-          <i class="fa-solid fa-code"></i>
-          <h3>Web Development</h3>
-          <p>Lorem ipsum dolor sitrerum dicta veritatis earum mollitia ab possimus minima, suscipit reprehenderit doloribus odio, at ipsam ea magni ratione tempore, corporis accusamus!</p>
-         <a href="#" class="bnt">Read More</a>
-        </div>
-
-        <div class="services-box">
-          <i class="fa-solid fa-paintbrush"></i>  
-          <h3>Graphic Design</h3>
-          <p>Lorem ipsum dolor sitrerum dicta veritatis earum mollitia ab possimus minima, suscipit reprehenderit doloribus odio, at ipsam ea magni ratione tempore, corporis accusamus!</p>
-         <a href="#" class="bnt">Read More</a>
-        </div>
-
-        <div class="services-box">
-          <i class="fa-solid fa-paintbrush"></i>  
-          <h3>Graphic Design</h3>
-          <p>Lorem ipsum dolor sitrerum dicta veritatis earum mollitia ab possimus minima, suscipit reprehenderit doloribus odio, at ipsam ea magni ratione tempore, corporis accusamus!</p>
-         <a href="#" class="bnt">Read More</a>
-        </div>
-
-        
-      </div>
-    </section>
-
-   
-
-    <section class="portfolio" id="portfolio">
-      <h2 class="heading"> Latest <span>Projects!</span></h2>
-
-      <div class="portfolio-container">
-        <div class="portfolio-box">
-          <img src="port-image1.jpg" alt="">
-          <div class="portfolio-layer">
-            <h4>AMAZON>COM Clone </h4>
-            <p>This project is fot learinig and traning purpose</p>
-            <a href="https://sujalshk.github.io/amazon-clone-sujal/"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          <div class="hero-stack" aria-label="Technology preview">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>TypeScript</span>
+            <span>Python</span>
           </div>
         </div>
-        <div class="portfolio-box">
-          <img src="port-image2.jpg" alt="">
-          <div class="portfolio-layer">
-            <h4>ROCK-PAPER-SCISSOR GAME</h4>
-            <p>Simple game made using HTML CSS and JS.</p>
-            <a href="https://sujalshk.github.io/ROCK_PAPER_SCISSOR-/"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-          </div>
-        </div>
-        <div class="portfolio-box">
-          <img src="port-image3.jpg" alt="">
-          <div class="portfolio-layer">
-            <h4>Web Design</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, fuga.</p>
-            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-          </div>
-        </div>
-        <div class="portfolio-box">
-          <img src="port-image4.jpg" alt="">
-          <div class="portfolio-layer">
-            <h4>Web Design</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, fuga.</p>
-            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-          </div>
-        </div>
-        <div class="portfolio-box">
-          <img src="port-image5.jpg" alt="">
-          <div class="portfolio-layer">
-            <h4>Web Design</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, fuga.</p>
-            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-          </div>
-        </div>
-        <div class="portfolio-box">
-          <img src="port-image1.jpg" alt="">
-          <div class="portfolio-layer">
-            <h4>Web Design</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, fuga.</p>
-            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    
-
-    <section class="contact" id="contact">
-      <h2 class="heading"> Contact <span>ME!</span></h2>
-
-      <form name="submit-to-google-sheet"> 
-        
-        <div class="input-box">
-          <input type="text" name="Name" placeholder="Full Name"  class="information">
-          <input type="email" name="Email" placeholder="Email" class="information">
+        <div class="home-visual" aria-label="Profile summary">
+          <div class="profile-card">
+            <div class="profile-image">
+              <img src="hero-sujal.png" alt="Portrait of Sujal Shakya" />
+            </div>
+            <div class="profile-meta">
+              <p>CS Student</p>
+              <strong>Building full-stack web apps</strong>
+            </div>
+          </div>
         </div>
-        <div class="input-box">
-          <input type="number" name="Mobile" placeholder="Mobile number" class="information">
-          <input type="text" name="Emails" placeholder="Email subject" class="information">
+      </section>
+
+      <section class="front-summary" aria-label="Portfolio highlights">
+        <div class="summary-item">
+          <strong>6+</strong>
+          <span>Projects Built</span>
         </div>
-        <textarea name="" id="" cols="30" rows="9" placeholder=" Your Message"></textarea>
-        <input type="submit"  class="bnt" onclick="document.querySelector('.information').values=''">
-      </form>
-    </section>
+        <div class="summary-item">
+          <strong>5+</strong>
+          <span>Core Technologies</span>
+        </div>
+        <div class="summary-item">
+          <strong>Full-Stack</strong>
+          <span>Learning Path</span>
+        </div>
+      </section>
+
+      <section class="about" id="about">
+        <div class="about-img">
+          <img src="sujal.jpg" alt="Sujal Shakya" />
+        </div>
+        <div class="about-content">
+          <p class="section-kicker">About Me</p>
+          <h2 class="heading">Student Developer With A Builder Mindset</h2>
+          <p>
+            I am a computer science student focused on becoming a strong
+            full-stack web developer. I have completed frontend fundamentals and
+            I am now building backend skills with APIs, databases, and server-side
+            development.
+          </p>
+          <p>
+            My goal is to create useful, responsive, and reliable applications
+            while preparing for internships and real-world software engineering
+            work.
+          </p>
+          <a href="#contact" class="btn btn-primary">
+            <i class="fa-solid fa-handshake"></i>
+            Let's Connect
+          </a>
+        </div>
+      </section>
+
+      <section class="skills" id="skills">
+        <div class="section-heading">
+          <p class="section-kicker">Skills Preview</p>
+          <h2 class="heading">Technologies I Work With</h2>
+          <p>
+            A quick overview of the tools and concepts I use while building
+            projects and improving as a computer science student.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          <article class="skill-card">
+            <i class="fa-solid fa-laptop-code"></i>
+            <h3>Frontend</h3>
+            <p>HTML, CSS, JavaScript, TypeScript, responsive layouts, and modern UI patterns.</p>
+          </article>
+          <article class="skill-card">
+            <i class="fa-solid fa-server"></i>
+            <h3>Backend</h3>
+            <p>Node.js, Express, Python, REST APIs, form handling, and database fundamentals.</p>
+          </article>
+          <article class="skill-card">
+            <i class="fa-solid fa-toolbox"></i>
+            <h3>Tools</h3>
+            <p>Git, GitHub, VS Code, browser DevTools, deployment, and debugging workflows.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="portfolio" id="portfolio">
+        <div class="section-heading projects-heading">
+          <div>
+            <p class="section-kicker">Featured Work</p>
+            <h2 class="heading">Projects That Show My Progress</h2>
+            <p>
+              These projects show my frontend foundation, JavaScript practice, and
+              interest in building complete web experiences.
+            </p>
+          </div>
+          <a href="/projects" class="view-all-projects">
+            View All Projects
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <div class="project-carousel" data-project-carousel aria-label="Featured projects carousel">
+          <button class="carousel-arrow carousel-arrow-left" type="button" data-carousel-prev aria-label="Previous project">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+
+          <div class="carousel-stage" data-carousel-stage aria-live="polite"></div>
+
+          <button class="carousel-arrow carousel-arrow-right" type="button" data-carousel-next aria-label="Next project">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+
+          <div class="carousel-dots" data-carousel-dots aria-label="Project carousel pagination"></div>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <div class="section-heading">
+          <p class="section-kicker">Contact</p>
+          <h2 class="heading">Let's Build Something Useful</h2>
+          <p>
+            Have an internship opportunity, project idea, or academic
+            collaboration in mind? Send me a message.
+          </p>
+        </div>
+
+        <form name="submit-to-google-sheet">
+          <div class="input-box">
+            <input type="text" name="Name" placeholder="Full Name" required />
+            <input type="email" name="Email" placeholder="Email Address" required />
+          </div>
+          <div class="input-box">
+            <input type="tel" name="Mobile" placeholder="Mobile Number" />
+            <input type="text" name="Subject" placeholder="Subject" />
+          </div>
+          <textarea name="Message" cols="30" rows="8" placeholder="Your Message" required></textarea>
+          <button type="submit" class="btn btn-primary">
+            <i class="fa-solid fa-paper-plane"></i>
+            Send Message
+          </button>
+          <p class="form-message" id="form-message" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
 
     <footer class="footer">
       <div class="footer-text">
-        <p>Copyright &copy; 2023 by Sujal_Shakya | All Right Reserved. <p>
+        <p>Copyright &copy; 2026 by Sujal Shakya | All Rights Reserved.</p>
       </div>
       <div class="footer-iconTop">
-        <a href="#home"><i class="fa-solid fa-arrow-up"></i></a>
+        <a href="#home" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></a>
       </div>
     </footer>
+
     <script src="https://unpkg.com/scrollreveal"></script>
-
-
-    
     <script>
-      const scriptURL = 'https://script.google.com/macros/s/AKfycbxYEOPg1TqOOkQBrgDcrfcmZnzLeLKQ7HBtFi2ixkMxLjr4ZxyqLsofiXnoWUlwc72_jA/exec'
-      const form = document.forms['submit-to-google-sheet']
-    
-      form.addEventListener('submit', e => {
-        e.preventDefault()
-        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-          .then(response => console.log('Success!', response))
-          .catch(error => console.error('Error!', error.message))
-      })
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbxYEOPg1TqOOkQBrgDcrfcmZnzLeLKQ7HBtFi2ixkMxLjr4ZxyqLsofiXnoWUlwc72_jA/exec";
+      const form = document.forms["submit-to-google-sheet"];
+      const formMessage = document.getElementById("form-message");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        formMessage.textContent = "Sending...";
+
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then(() => {
+            formMessage.textContent = "Message sent successfully. Thank you!";
+            form.reset();
+          })
+          .catch(() => {
+            formMessage.textContent = "Message could not be sent. Please try again.";
+          });
+      });
     </script>
+    <script src="projects-data.js"></script>
     <script src="port.js"></script>
   </body>
 </html>
-
-
